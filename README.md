@@ -1,23 +1,15 @@
 # Go Spam Filter API
 
-A lightweight, RESTful API that classifies text as "Spam" or "Ham" using a Naive Bayes probabilistic model. Built entirely from scratch in Go without external Machine Learning libraries.
+A lightweight, RESTful API that classifies text as "Spam" or "Ham" using a Naive Bayes probabilistic model. Built entirely from scratch in Go without external Machine Learning libraries, containerized with Docker, and automatically deployed to Google Cloud.
 
 ## 🚀 Tech Stack
 * **Language:** Go (Golang)
 * **Concepts:** Machine Learning (Naive Bayes), NLP (Bag of Words, Tokenization), RESTful APIs, Log-probability scaling.
+* **Infrastructure & DevOps:** Docker, Google Cloud Platform (Cloud Run, Artifact Registry), CI/CD (GitHub Actions).
 
-## 🧠 How it Works
-1. **Training:** The model ingests the Enron Email Dataset, tokenizes the text, and calculates word frequencies.
-2. **Math:** It uses Laplace smoothing and sums logarithmic probabilities to prevent floating-point underflow when handling large datasets.
-3. **Serving:** Exposes a local HTTP server to accept JSON payloads and return classification scores in real-time.
+## 🌍 Live API Endpoint
+The API is containerized and deployed publicly on Google Cloud Run. You can test it from any terminal right now.
 
-## 💻 How to Run Locally
-
-1. Clone the repository.
-2. Download the [Enron-Spam Dataset (enron1)](https://www2.aueb.gr/users/ion/data/enron-spam/) and extract it into an `enron1/` directory at the root level.
-3. Start the server:
-   ```bash
-   go run main.go
-4. Send a test POST request:
-   ```bash
-   Invoke-RestMethod -Uri "http://localhost:8080/api/classify" -Method Post -ContentType "application/json" -Body '{"text": "Congratulations! You won a free $1000 gift card."}'
+**Send a test request:**
+```powershell
+Invoke-RestMethod -Uri "[https://go-spam-api-7aj26y5hta-lm.a.run.app/api/classify](https://go-spam-api-7aj26y5hta-lm.a.run.app/api/classify)" -Method Post -ContentType "application/json" -Body '{"text": "Congratulations! You won a free $1000 gift card."}'
