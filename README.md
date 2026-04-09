@@ -12,4 +12,4 @@ The API is containerized and deployed publicly on Google Cloud Run. You can test
 
 **Send a test request:**
 ```powershell
-Invoke-RestMethod -Uri "[https://go-spam-api-7aj26y5hta-lm.a.run.app/api/classify](https://go-spam-api-7aj26y5hta-lm.a.run.app/api/classify)" -Method Post -ContentType "application/json" -Body '{"text": "Congratulations! You won a free $1000 gift card."}'
+Invoke-RestMethod -Uri "https://go-spam-api-7aj26y5hta-lm.a.run.app/api/classify" -Method Post -ContentType "application/json" -Body '{"text": "Congratulations! You won a free $1000 gift card."}'
