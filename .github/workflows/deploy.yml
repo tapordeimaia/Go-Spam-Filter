@@ -9,6 +9,7 @@ env:
   REGION: europe-central2 
   REPO_NAME: spam-api-repo
   SERVICE_NAME: go-spam-api
+  FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
 
 jobs:
   deploy:
